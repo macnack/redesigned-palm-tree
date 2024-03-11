@@ -14,7 +14,7 @@ lista = [2, 3, 4, 5] # Dla tej listy wynik powinien być 2^2 + 5^3 = 4 + 125 = 1
 def gen_list(n):
     return [random.randint(1, 10) for _ in range(n)]
 
-n_values = list(range(2, 50))
+n_values = list(range(2, 101))
 execution_times = []
 
 for n in n_values:
@@ -24,7 +24,7 @@ for n in n_values:
     end_time = time.perf_counter()
     execution_times.append(end_time - start_time)
 
-# # Rysowanie wykresu
+# Rysowanie wykresu
 print(sum(execution_times) / 10**9)
 plt.figure(figsize=(10, 6))
 plt.plot(n_values, execution_times, marker='o', linestyle='-', color='b')
@@ -32,7 +32,7 @@ plt.title('Czas wykonania algorytmu w zależności od długości listy n')
 plt.xlabel('Długość listy n')
 plt.ylabel('Czas wykonania (s)')
 plt.grid(True)
-plt.show()
+# plt.show()
 
 import pandas as pd
 df = pd.DataFrame({'n_values': n_values, 'execution_times': execution_times})

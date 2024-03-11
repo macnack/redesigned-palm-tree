@@ -11,7 +11,7 @@ def bubble_sort(arr):
 def gen_list(n):
     return [random.randint(1, 10) for _ in range(n)]
 
-n_values = list(range(2, 50))
+n_values = list(range(2, 101))
 execution_times = []
 for n in n_values:
     lista = gen_list(n)
@@ -27,7 +27,7 @@ plt.title('Czas wykonania algorytmu w zależności od n')
 plt.xlabel('n')
 plt.ylabel('Czas wykonania (s)')
 plt.grid(True)
-plt.show()
+# plt.show()
 
 import pandas as pd
 df = pd.DataFrame({'n_values': n_values, 'execution_times': execution_times})

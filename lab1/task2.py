@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 def suma_liczb(n):
     return sum(range(n+1))
 
-n_values = list(range(2, 50))
+n_values = list(range(2, 101))
 execution_times = []
 
 for n in n_values:
@@ -17,14 +17,13 @@ for n in n_values:
     execution_times.append(end_time - start_time)
 
 # Rysowanie wykresu
-
 plt.figure(figsize=(10, 6))
 plt.plot(n_values, execution_times, marker='o', linestyle='-', color='b')
 plt.title('Czas wykonania algorytmu w zależności od n')
 plt.xlabel('n')
 plt.ylabel('Czas wykonania (ns)')
 plt.grid(True)
-plt.show()
+# plt.show()
 
 import pandas as pd
 df = pd.DataFrame({'n_values': n_values, 'execution_times': execution_times})
